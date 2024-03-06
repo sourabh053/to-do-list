@@ -3,7 +3,7 @@ import React from 'react'
 function Header() {
     return (
         <div className='header container'>
-            <h3>Trello Borad</h3>
+            <h3>Trello Board</h3>
         </div>
     )
 }
