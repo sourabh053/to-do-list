@@ -54,6 +54,12 @@ function List({ id,title,lists, setLists,cards,setCards }) {
   }
   function handleTitleSave(){
     if(titleRef.current.textContent === '') return;
+    const nlists = lists.map((list)=>{
+      if(list.id === id) return {...list,title:titleRef.current.textContent};
+      return list;
+    });
+    setLists(nlists);
+    updateLocalStorageList(nlists);
     titleRef.current.contentEditable = false;
     titleRef.current.style.zIndex = "auto";
     overlayRef.current.style.display = 'none';
